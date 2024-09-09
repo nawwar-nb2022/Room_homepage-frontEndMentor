@@ -1,0 +1,251 @@
+.top_section_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 50vh;
+}
+
+.image_container {
+  width: 55%;
+  height: 100%;
+}
+.image_container img {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* navigation section */
+
+.navigationSection {
+  position: absolute;
+  left: 20px;
+  top: 10%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  width: 400px;
+}
+.mobile {
+  display: none;
+}
+.navigationSection .tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.navigationSection .tabs a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  transition: 0.5s ease all;
+}
+.navigationSection .tabs a::after {
+  content: "";
+  left: 0;
+  right: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  transition: 0.5s ease all;
+}
+.navigationSection .tabs a:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.data_container {
+  box-sizing: border-box;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data {
+  min-height: 100%;
+}
+/* arrow section  */
+.data_container .arrowSection {
+  position: absolute;
+  bottom: 0;
+  left: 55%;
+}
+.data_container .arrowSection .btn {
+  width: 75px;
+  height: 75px;
+  background: #000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s ease background;
+}
+
+.data_container .arrowSection .btn:hover {
+  background: var(--v-dark-gray);
+}
+
+/* data section */
+
+.data_container .data {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-direction: column;
+  padding: 0 15%;
+}
+.data h3 {
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+.data p {
+  color: var(--dark-gray);
+  font-size: var(--font-s);
+  line-height: 20px;
+}
+
+.data button {
+  letter-spacing: 12px;
+  border: none;
+  outline: none;
+  background: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.5s ease all;
+  font-weight: 600;
+}
+.data button:hover {
+  gap: 20px;
+}
+.data button:hover span {
+  color: var(--dark-gray);
+}
+@media only screen and (max-width: 700px) {
+  .top_section_container {
+    flex-direction: column;
+  }
+
+  .image_container {
+    width: 100%;
+  }
+  .data_container {
+    width: 100%;
+    position: relative;
+  }
+  .data_container .data {
+    padding: 5% 15%;
+  }
+  .data_container .arrowSection {
+    left: auto;
+    bottom: auto;
+    right: 0;
+    top: -75px;
+  }
+  .navigationSection {
+    width: 100%;
+    left: 0;
+    top: 0;
+    min-height: 40px;
+    justify-content: space-around;
+    position: fixed;
+  }
+  .mobile {
+    display: block;
+  }
+  .navigationSection .desktop {
+    position: absolute;
+    top: -120px;
+    display: flex;
+    transition: 0.5s ease all;
+    background: white;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+  }
+  .navigationSection .desktop a {
+    color: black;
+  }
+  .navigationSection .desktop.show {
+    top: -20px;
+  }
+
+  .navigationSection .desktop .mobile {
+    width: 20px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .navigationSection .mobile span {
+    width: 2px;
+    height: 20px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+  }
+  .navigationSection .mobile span.left {
+    rotate: -45deg;
+  }
+  .navigationSection .mobile span.right {
+    rotate: 45deg;
+  }
+
+  .desktop-show {
+    display: none;
+  }
+  .navigationSection .tabs a::after {
+    background: black;
+  }
+}
+
+/* bottom section */
+
+.bottom_section_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom_section_container .image_container {
+  width: 30%;
+}
+
+.bottom_section_container .details {
+  width: 40%;
+  padding: 30px 10px;
+}
+.bottom_section_container .details .title {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+
+.bottom_section_container .details p {
+  color: var(--dark-gray);
+  line-height: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .bottom_section_container {
+    flex-direction: column;
+  }
+  .bottom_section_container .image_container,
+  .bottom_section_container .details {
+    width: 100%;
+  }
+}
